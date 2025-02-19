@@ -59,14 +59,22 @@ public class EmployeeSalaryCalculator
 				if(HW <= standardWorkingHours)
 				{
 					//YOUR CODE STARTS HERE
-					 
-
+					// calculating number of hours worked by the pay (ex. 40 hrs * $35)
+					grossSalary = basicPay = HR * HW;
 					//YOUR CODE ENDS HERE
 				}
 				else
 				{
 					//YOUR CODE STARTS HERE
- 
+
+					//establishing base pay, OT, OT rate (x2 as per instructions)
+					basicPay = HR * standardWorkingHours;
+					overTime = HW - standardWorkingHours;
+					overTimeRate = 2 * HR;
+					overTimePay = overTimeRate * overTime;
+
+					//updating gross sal to reflect new overtime pay
+					grossSalary = basicPay + overTimePay;
 
 					//YOUR CODE ENDS HERE
 				}
